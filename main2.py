@@ -9,16 +9,16 @@ def handler(bot, update):
   text = update.message.text
   chat_id = update.message.chat_id
   
-  if '모해' in text:
-    bot.send_message(chat_id=chat_id, text='오빠 생각 ㅎㅎ')
-  elif '아잉' in text:
-    bot.send_message(chat_id=chat_id, text=emojize('아잉:heart_eyes:', use_aliases=True))
-  elif '몇시에' in text:
-    bot.send_message(chat_id=chat_id, text='7시에 보자')
-  elif '사진' in text:
+  if '/start' in text:
+    bot.send_message(chat_id=chat_id, text='Hello there.')
+  elif '2' in text:
+    bot.send_message(chat_id=chat_id, text=emojize('Sorry I can't understand:heart_eyes:', use_aliases=True))
+  elif 'Owner' in text:
+    bot.send_message(chat_id=chat_id, text='This is my Owner >> @XFlick')
+  elif '0' in text:
     bot.send_photo(chat_id=chat_id, photo=open('img/mj.jpg', 'rb'))
   else:
-    bot.send_message(chat_id=chat_id, text='몰라')
+    bot.send_message(chat_id=chat_id, text='Love you')
 
 echo_handler = MessageHandler(Filters.text, handler)
 dispatcher.add_handler(echo_handler)
